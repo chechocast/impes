@@ -1,0 +1,1587 @@
+@import 'mixins';
+
+/*COLORS*/
+$black: #000;
+$blue: #4990E2;
+$gray: #D8D8D8;
+$gray2: #F1F5F6;
+$gray3: #F9FBFB;
+$gray4: #9DA8AC;
+$gray5: #E9F0F3;
+$bor-gray: 1px solid #D8D8D8;
+$purple: #283583;
+$purple2: #2F354E; 
+$darkblue: #1E233C;
+$white: #FFF;
+$text-color: #505052;
+
+
+body{
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
+    box-sizing: border-box;
+    line-height: normal;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    word-break: break-all;
+    color: $purple;
+}
+br{
+    clear: both;
+}
+p {
+    margin: 0;
+    padding: 8px 0;
+}
+input, select, textarea {
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
+}
+input[type="text"], [type="password"], [type="number"]{
+    background: none;
+    border: none;
+    box-sizing: border-box;
+}
+input {
+    -webkit-appearance: none;
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+}
+
+input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 0 none;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    color: inherit;
+}
+
+select {
+}
+textarea{
+    resize: none;
+    box-sizing: border-box;
+}
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+.content_all{
+    width: 1004px;
+    margin: 0 auto;
+    position: relative;
+
+    @include lg{
+        width: 960px;
+    }
+    @include md {
+        width: 768px;
+    }
+
+    @include sm {
+        width: 600px;
+    }
+
+    @include s {
+        width: 540px;
+    }
+
+    @include xs {
+        width: 480px;
+    }
+
+    @include xxs {
+        width: 375px;
+    }
+
+    @include i6 {
+        width: 360px;
+    }
+
+    @include i5 {
+        width: 320px;
+    }
+
+    @include xxxs {
+        width: 90%;
+    }
+}
+
+/*HEADER*/
+header{
+    background: $white;
+    border-bottom: $bor-gray;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+
+    .menu-header{
+        float: right;
+        list-style: none;
+        margin: 0 0 0 40px;
+        padding: 0;
+        
+        .menu-sitio{
+            @include sm{
+                display: none;
+                float: none;
+                margin: 0;
+                position: fixed;
+                top: 63px;
+                left: 0;
+                background-color: $gray3;
+                width: 100%;
+            }
+        }
+
+        .menu{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li{
+            float: left;
+            text-transform: uppercase;
+            font-weight: 500;
+            @include transition(0.3s);
+            position: relative;
+
+            @include sm{
+                float: none;
+                width: 100%;
+            }
+            &.current_page_item{
+
+                a{
+                    color: $purple;
+                    font-weight: 700;
+                    background: $gray2;
+                }
+            }
+
+            &:hover .sub-menu{
+                display: block;
+            }
+
+            a{
+                display: block;
+                padding: 39px 20px;
+                color: $black;
+                font-size: 14px;
+                @include lg{
+                    padding: 30px 10px;
+                }
+                @include sm{
+                    padding: 10px 20px;
+                }
+                
+                &:hover{
+                    color: $purple;   
+                }
+                span{
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+    .main-menu{
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        @include sm{
+            display: block;
+        }
+    }
+    .logo{
+        margin: 10px 0;
+        float: left;
+
+        @include lg{
+            margin: 6px 0;
+        }
+        @include sm{
+            width: 100%;
+        }
+
+        img{
+            height: 80px;
+            display: block;
+            margin: 0 auto;
+
+            @include lg{
+                height: 70px;
+            }
+            @include sm{
+                height: 50px;
+            }
+        }
+
+        span{
+            text-indent: -99999px;
+            position: absolute;
+        }
+    }
+}
+/*FIN HEADER*/
+
+section{
+    padding: 50px 0;
+}
+
+.pg-body{
+    padding: 100px 0 0;
+
+    @include sm{
+        padding: 60px 0 0;
+    }
+}
+
+/*HOME*/
+.slide_home{
+    background: $purple;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        z-index: 2;
+
+        li{
+            color: $white;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+
+            h2{
+                font-size: 40px;
+                max-width: 860px;
+                margin: 0 auto;
+                font-weight: 700;
+                line-height: 140%;
+                width: 80%;
+
+                @include iplus{
+                    font-size: 30px;
+                }
+                @include i6{
+                    width: 96%;
+                    position: absolute;
+                    bottom: 80px;
+                    left: 2%;
+                    font-size: 23px;
+                }
+                @include xxxs{
+                    bottom: 45px;
+                }
+
+                span{
+                    font-size: 18px;
+
+                    @include iplus{
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            a{
+                margin: 30px auto 0;
+                text-align: center;
+                display: block;
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                @include border-radius(2px);
+                @include transition(0.3s);
+                border: 3px solid $white;
+                width: 150px;
+                padding: 10px 0;
+
+                &:hover{
+                    background: $white;
+                    color: $purple;
+                }
+
+            }
+        }
+    }
+}
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: black; /* in case the video doesn't fit the whole page*/
+    background-position: center center;
+    background-size: contain;
+    /*object-fit: cover; cover video background */
+    z-index:0;
+    opacity: 0.3;
+    
+    @include i6{
+        opacity: 0.5;
+    }
+}
+.intro-text{
+    float: left;
+    width: 50%;
+    margin: 40px 0 0;
+    @include sm{
+        margin: 0;
+    }
+    @include s{
+        width: 100%;
+        float: none;
+        margin: 20px 0 0;
+    }
+
+    h2{
+        font-size: 23px;
+        font-weight: 700;
+        margin: 0 0 30px;
+        line-height: 120%;
+        @include sm{
+            margin: 0 0 10px;
+        }
+        @include s{
+            text-align: center;
+        }
+
+        span{
+            color: $purple;
+        }
+
+        b{
+            font-size: 11px;
+        }
+    }
+}
+.intro-img{
+    float: right;
+    width: 408px;
+    @include md{
+        width: 300px;
+    }
+    @include sm{
+        width: 250px;
+    }
+    @include s{
+        width: 270px;
+        float: none;
+        margin: 0 auto;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+    }
+}
+.service-content{
+    background: $gray3;
+}
+.tit-section{
+    text-align: center;
+    color: $purple;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    span{
+        font-size: 14px;
+    }
+}
+
+.sub-title{
+    max-width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+    padding: 0;
+}
+.box-pro{
+
+}
+
+.product-box{
+    width: calc(33.3% - 14px);
+    float: left;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 170px 0 0;
+    margin: 0 20px 20px 0;
+    border-bottom: $bor-gray;
+    @include md{
+        padding: 140px 0 0;
+    }
+    @include sm{
+        padding: 100px 0 0;
+    }
+    @include s{
+        width: calc(50% - 10px);
+        padding: 150px 0 0;
+
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+        &:nth-child(3n){
+            margin-right: 20px;
+        }
+    }
+    @include xs{
+        padding: 120px 0 0;
+    }
+    @include xxs{
+        width: 100%;
+        margin: 0 0 20px;
+        padding: 210px 0 0;
+    }
+    @include i5{
+        padding: 160px 0 0;
+    }
+
+    &:nth-child(3n){
+        margin-right: 0;
+    }
+
+
+    img{
+        display: block;
+        width: 100%;
+    }
+    .product-text{
+        margin: 15px;
+
+        h3{
+            color: $darkblue;
+            font-weight: 600;
+            font-size: 18px;
+
+            span{
+                font-size: 11px;
+            }
+        }
+        p{
+            font-size: 12px;
+            color: $gray4;
+            padding: 0;
+        }
+        .btn{
+            font-weight: 600;
+            margin: 20px 0 0;
+            display: block;
+            height: 21px;
+
+            [class^="icon-"]{
+                font-size: 15px;
+            }
+        }
+    }
+}
+.btn-more{
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    font-size: 17px;
+    margin: 30px 0 0;
+
+    [class^="icon-"]{
+        font-size: 17px;
+    }   
+}
+.ventajas-content{
+    border-top: $bor-gray;
+}
+.testimonials{
+    background: $gray2;
+
+    .test-slide{
+        list-style: none;
+        margin: 0 0 20px;
+        padding: 0;
+        text-align: center;
+
+        li{
+
+            h3{
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 120%;
+            }
+            h4{
+                color: $purple;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 120%;
+            }
+            p{
+                max-width: 800px;
+                color: $gray4;
+                margin: 20px auto;
+                padding: 0;
+            }
+            img{
+                width: 120px;
+                height: 120px;
+                display: block;
+                margin: 0 auto 20px;
+                
+                @include xxs{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+    .swiper-pagination-bullet-active{
+        background: $purple;
+    }
+}
+
+/*FIN HOME*/
+
+/*PROYECTOS*/
+.proyects-content{
+    background: $purple;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    @include sm{
+        background: transparent;
+        grid-template-columns: 1fr;
+    }
+
+    li{
+        color: $white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include media-max(768px){
+            &:nth-child(4n-1) .proyect-prev, &:nth-child(4n+0) .proyect-prev{
+            order: 2;
+            }
+            &:nth-child(4n-1) .text-box-prev, &:nth-child(4n+0) .text-box-prev{
+                order: 1;
+            }
+        }
+
+        @include sm{
+            background: $purple;
+            grid-template-columns: 2fr 5fr;
+            margin: 0 0 20px;
+            @include border-radius(2px);
+        }
+        @include s{
+            grid-template-columns: 4fr 5fr;
+        }
+        @include xxs{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include i6{
+            grid-template-columns: unset;
+        }
+    }
+    .proyect-prev{
+        overflow: hidden;
+
+        img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        a{
+            display: block;
+        }
+    }
+    .text-box{
+        padding: 20px;
+        box-sizing: border-box;
+        @include md{
+            padding: 15px;
+
+            p{
+                font-size: 11px;
+            }
+        }
+        @include sm{
+            padding: 20px;
+
+            p{
+                font-size: 13px;
+            }
+        }
+        @include xxs{
+            padding: 15px;
+
+            p{
+                font-size: 11px;
+            }
+        }
+        @include i6{
+            width: 100%;
+        }
+
+        h4{
+            color: $blue;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        h3{
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            line-height: 120%;
+            @include md{
+                font-size: 14px;
+            }
+            @include sm{
+                font-size: 16px;
+            }
+            @include xxs{
+                font-size: 14px;
+            }
+        }
+        a{
+            margin: 30px 0 0;
+            display: block;
+            color: $white;
+            font-weight: 600;
+            @include md{
+                margin: 10px 0 0;
+            }
+
+            [class^="icon-"]{
+                font-size: 15px;
+            }
+        }
+    }
+}
+/*FIN PROYECTOS*/
+
+/*VENTAJAS*/
+.vent-content{
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+
+    li{
+        border: $bor-gray;
+        width: calc(33.3% - 14px);
+        height: 225px;
+        float: left;
+        margin: 0 20px 20px 0;
+        padding: 20px;
+        box-sizing: border-box;
+
+        @include md{
+            height: 280px;
+        }
+        @include sm{
+            width: calc(50% - 10px);
+            height: 250px;
+
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+            &:nth-child(3n){
+                margin-right: 20px;
+            }
+        }
+        @include xs{
+            width: 100%;
+            margin: 0 0 20px;
+            height: auto;
+            float: none;
+        }
+        
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+
+        h3{
+            color: $darkblue;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 120%;
+            height: 63px;
+            @include md{
+                font-size: 16px;
+                height: 58px;
+            }
+            @include xs{
+                height: auto;
+            }
+        }
+
+        p{
+            padding: 0;
+            margin: 8px 0 0;
+        }
+    }
+    br{
+        @include xs{
+            display: none;
+        }
+    }
+}
+.video{
+    position: relative;
+    margin: 20px 0 50px;
+
+    img{
+        width: 100%;
+    }
+    iframe{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+/*FIN VENTAJAS*/
+
+/*PRODUCTO*/
+.dwl-file{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li{
+        margin: 10px 0;
+
+        img{
+            float: left;
+            display: block;
+        }
+        span{
+            float: left;
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 4px 10px;
+        }
+    }
+}
+.inter-txt{
+    font-size: 15px;
+
+    @include i5{
+        font-size: 13px;
+    }
+}
+.equipment{
+    background: $purple2;
+    color: $white;
+
+    h2{
+        color: $white;
+    }
+
+    .box-equip{
+        margin: 20px 0 0;
+
+        img{
+            display: block;
+            float: left;
+            margin: 0 20px 0 0;
+            width: 400px;
+            @include sm{
+                width: 80%;
+                margin: 0 auto 10px;
+                float: none;
+            }
+            @include xxs{
+                width: 100%;
+            }
+        }
+        article{
+            float: left;
+            font-size: 15px;
+            width: calc(100% - 420px);
+
+            @include sm{
+                width: 100%;
+                float: none;
+            }
+            @include  xxs{
+                font-size: 13px;
+            }
+        }
+    }
+}
+.specs{
+    margin: 20px 0 0;
+    list-style: none;
+    padding: 0;
+
+    li{
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background: $gray5;
+        @include xs{
+            font-size: 14px;
+        }
+
+        &:nth-child(2n){
+            background: $white;
+        }
+
+        b{
+            width: calc(50% - 12px);
+            text-align: right;
+            display: inline-block;
+            margin: 0 20px 0 0;
+            color: $purple2;
+            font-weight: 600;
+
+            @include iplus{
+                display: block;
+                text-align: center;
+                margin: 0;
+                width: 100%;
+            }
+        }
+        span{
+            width: calc(50% - 13px);
+            text-align: left;
+            display: inline-block;
+
+            @include iplus{
+                display: block;
+                text-align: center;
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+.btn-cotiza{
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 600;
+    width: 150px;
+    padding: 10px 0;
+    border: 3px solid $purple;
+    @include transition(0.3s);
+    @include border-radius(2px);
+
+    &:hover{
+        background: $purple;
+        color: $white;
+    }
+}
+.clients{
+    margin: 0;
+    padding: 0 0 40px;
+    list-style: none;
+
+    li{
+        float: left;
+        width: 33.3%;
+        margin: 30px 0 0;
+
+        img{
+            display: block;
+            margin: 0 auto;
+            @include md{
+                width: 120px;
+                height: 120px;    
+            }
+            @include sm{
+                width: 100px;
+                height: 100px;
+            }
+            @include i5{
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+}
+.apli-img{
+
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+/*FIN PRODUCTO*/
+
+/*SOLUCIONES*/
+.solution{
+    background: $gray2;
+
+    aside{
+        width: calc(100% - 620px);
+        float: left;
+        margin: 30px 0 0 20px;
+        box-sizing: border-box;
+        list-style: none;
+
+        @include md{
+            width: calc(100% - 420px);
+        }
+        @include sm{
+            width: calc(50% - 10px);
+        }
+        @include s{
+            width: 100%;
+            margin: 0;
+        }
+
+        li{
+            margin: 0 0 15px;
+            font-weight: 500;
+            font-size: 15px;
+            @include sm{
+                font-size: 13px;
+            }
+
+            a{
+                display: block;
+                color: $gray4;
+                border: 2px solid $gray4;
+                padding: 5px;
+                @include transition(0.3s);
+                @include border-radius(3px);
+
+                &:hover, &.active{
+                    color: $purple;
+                    border-color: $purple;
+                }
+            }
+        }
+    }
+}
+.box-solution{
+    float: left;
+    width: 600px;
+    margin: 30px 0 0;
+    display: none;
+
+    @include md{
+        width: 400px;
+    }
+    @include sm{
+        width: calc(50% - 10px);
+    }
+    @include s{
+        width: 100%;
+        float: none;
+    }
+
+    img{
+        width: 100%;
+        display: block;
+    }
+
+    h3{
+        color: $darkblue;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 10px;
+        line-height: 120%;
+
+        @include s{
+            font-size: 18px;
+        }
+    }
+    ol{
+        margin: 20px 0 20px 20px;
+        padding: 0;
+        font-size: 15px;
+
+        @include sm{
+            font-size: 13px;
+        }
+        @include s{
+            font-size: 15px;
+        }
+
+        li{
+            color: $purple;
+            font-weight: 600;
+            padding: 5px 0;
+
+            span{
+                color: $text-color;
+                font-weight: 400;
+            }
+        }
+    }
+}
+/*FIN SOLUCIONES*/
+
+footer{
+    font-size: 12px;
+    background: url(../images/bkg_footer.png) $darkblue;
+    background-position: center;
+    background-size: cover;
+    padding: 30px 0;
+    color: $white;
+
+    ul{
+        margin: 20px 0 40px;
+        padding: 0;
+        list-style: none;
+
+        li{
+            padding: 2px 0;
+        }
+    }
+
+    a{
+        color: $white;
+    }
+    
+    .camcologo{
+        float: right;
+    }
+}
+.copyright{
+    font-size: 10px;
+    color: $gray4;
+    text-align: center;
+}
+
+/*NOSOTROS*/
+.img-us{
+    margin: 10px 0;
+
+    img{
+        float: left;
+        display: block;
+        width: calc(50% - 20px);
+        margin: 0 20px 0 0;
+
+        @include md{
+            margin-top: 60px;
+        }
+        @include sm{
+            margin: 0 0 10px;
+            float: none;
+            width: 100%;
+        }
+    }
+    article{
+        float: left;
+        width: 50%;
+
+        @include sm{
+            float: none;
+            width: 100%;
+        }
+    }
+    br{
+        @include sm{
+            display: none;
+        }
+    }
+}
+.expocamacol{
+    position: relative;
+    background: $purple2;
+
+    &:after{
+        position: absolute;
+        content: "";
+        border-top: solid 87px $white;
+        border-right: solid 1000px transparent;
+        top: 0;
+        left: 0;
+
+        @include lg{
+            border-top: solid 55px $white;
+            border-right: solid 960px transparent;    
+        }
+        @include md {
+            border-right: solid 768px transparent;
+        }
+
+        @include sm {
+            border-right: solid 600px transparent;
+        }
+
+        @include s {
+            border-right: solid 540px transparent;
+        }
+
+        @include xs {
+            border-right: solid 480px transparent;
+        }
+
+        @include xxs {
+            border-right: solid 375px transparent;
+        }
+
+        @include i6 {
+            border-right: solid 360px transparent;
+        }
+
+        @include i5 {
+            border-right: solid 320px transparent;
+        }
+    }
+
+    .box-expocamacol{
+        color: $white;
+        float: left;
+        width: calc(100% - 663px);
+        margin: 140px 0 0;
+        padding: 20px;
+        box-sizing: border-box;
+        @include md{
+            width: calc(100% - 400px);
+            margin: 50px 0 0;
+            padding: 15px;
+        }
+        @include sm{
+            float: none;
+            width: 100%;
+            padding: 20px;
+            margin: 0;
+        }
+        p{
+            @include md{
+                padding: 0;
+            }
+        }
+
+        h3{
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    img{
+        display: block;
+        float: right;
+
+        @include md{
+            width: 400px;
+        }
+        @include sm{
+            width: 100%;
+            float: none;
+        }
+    }
+}
+.team{
+    background: $purple;
+    color: $white;
+
+    h2{
+        color: $white;
+    }
+
+    .box-team{
+        float: left;
+        width: 33.3%;
+        margin: 20px 0 0;
+        box-sizing: border-box;
+        text-align: center;
+        @include s{
+            width: 50%;
+        }
+        @include xxs{
+            width: 100%;
+            float: none;
+        }
+        
+        .img{
+            overflow: hidden;
+            @include circle(100px);
+            margin: 0 auto;
+
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h4{
+            font-size: 15px;
+            font-weight: 600;
+            margin: 10px 0 0;
+        }
+        p{
+            padding: 0;
+        }
+    }
+}
+/*FIN NOSOTROS*/
+
+/*CONTACTO*/
+form{
+    margin: 20px 0;
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea{
+        display: block;
+        width: 100%;
+        border-bottom: $bor-gray;
+        font-size: 15px;
+        padding: 7px 0;
+
+        &:hover, &:active{
+            color: $purple;
+            border-color: $purple;
+        }
+    }
+    textarea{
+        height: 150px;
+        margin: 0 0 40px;
+    }
+    div{
+        width: calc(33.3% - 14px);
+        margin: 0 20px 0 0;
+        float: left;
+        box-sizing: border-box;
+
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+        @include sm{
+            width: 50%;
+            margin: 0;
+            padding: 0 20px 0 0;
+        }
+        @include s{
+            padding: 0;
+            width: 100%;
+        }
+    }
+}
+.error{
+    color: red;
+    font-size: 11px;
+    display: block;
+    height: 18px;
+}
+.box-contact{
+    background: $gray2;
+    text-align: center;
+    font-size: 16px;
+    color: $purple;
+    padding: 30px 0;
+}
+.map{
+    height: 550px;
+
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+/*FIN CONTACTO*/
+
+/*MODALES*/
+.content-modal{
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mediaAlto (800px){
+        display: block;
+        padding: 40px 0;
+        overflow-y: auto;
+    }
+
+    .modal{
+        width: 800px;
+        margin: 0 auto;
+        @include md {
+            width: 768px;
+        }
+
+        @include sm {
+            width: 600px;
+        }
+
+        @include s {
+            width: 540px;
+        }
+
+        @include xs {
+            width: 480px;
+        }
+
+        @include xxs {
+            width: 375px;
+        }
+
+        @include i6 {
+            width: 360px;
+        }
+
+        @include i5 {
+            width: 320px;
+        }
+
+        @include xxxs {
+            width: 90%;
+        }
+
+        @include mediaAlto(800px){
+            
+        }
+
+        h2{
+            text-align: center;
+            color: $purple;
+            font-size: 25px;
+
+            font-weight: 700;
+        }
+        .video{
+            margin: 0;
+        }
+    }
+    .btn-close{
+        font-size: 25px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+}
+.body-noscroll {
+    overflow: hidden;
+    width: 100%;
+}
+/*FIN MODALES*/
+
+/*SLIDE*/
+.slide-case{
+    width: 100%;
+}
+.swiper-container{
+    width: 100%;
+}
+.gallery-top{
+    background: $black;
+    height: 450px;
+    @include md {
+        height: 432px;
+    }
+    @include sm {
+        height: 337px;
+    }
+    @include s {
+        height: 304px;
+    }
+    @include xs {
+        height: 270px;
+    }
+    @include xxs {
+        height: 211px;
+    }
+    @include i6 {
+        height: 202px;
+    }
+    @include i5 {
+        height: 180px;
+    }
+    @include xxxs {
+        height: 162px;
+    }
+}
+.swiper-slide{
+
+    img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+.gallery-thumbs{
+    background: $purple2;
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    @include xs{
+        display: none;
+    }
+
+    .swiper-slide {
+        height: 90px;
+        opacity: 0.4;
+        cursor: pointer;
+        overflow: hidden;
+        @include sm{
+            height: 66px;
+        }
+
+        img{
+            width: 100%;
+            max-height: inherit;
+        }
+    }
+    .swiper-slide-active {
+        opacity: 1;
+    }
+}
+/*FIN SLIDE*/
+
+/*REDES*/
+.redes{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+
+    @include xl{
+        position: fixed;
+        top: 120px;
+        background: $white;
+        right: 0;
+        @include border-radius(3px 0 0 3px);
+        @include box-shadow(0 0 6px rgba(68, 68, 68, 0.3));
+
+        br{
+            display: none;
+        }
+    }
+    
+    .social{
+        float: right;
+
+        @include xl{
+            float: none;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+
+            li{
+                position: relative;
+                display: inline-block;
+
+                a{
+                    display: block;
+                    color: $white;
+
+                    &:before{
+                        font-family: 'icomoon' !important;
+                        display: inline-block;
+                        vertical-align: top;
+                        content: "\ea90";
+                        font-size: 20px;
+                        padding: 10px;
+                        margin: 0 5px;
+                        @include border-radius(40px);
+                        speak: none;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-variant: normal;
+                        text-transform: none;
+                        line-height: 1;
+
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                    }
+
+                    &[href*="facebook.com"]::before{
+                        content: "\ea90";
+                        background: #3DA7FF;
+                    }
+                    &[href*="twitter.com"]::before{
+                        content: "\ea96";
+                        background: #3DA7FF;
+                    }
+                    &[href*="youtube.com"]::before{
+                        content: "\ea9d";
+                        background: #E33333;
+                    }
+                    &[href*="linkedin.com"]::before{
+                        content: "\ea8b";
+                        background: #0073b1;
+                    }
+
+                    .sr-text{
+                        display: none;
+                    }
+                }
+
+                @include xl{
+                    display: block;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+
+    span{
+        float: left;
+        padding: 13px 0;
+
+        @include media(1365px){
+            display: none;
+        }
+    }
+    .icon-twitter {
+        background: #3DA7FF;
+    }
+
+    .icon-facebook {
+        background: #15578D;
+    }
+
+    .icon-youtube {
+        background: #E33333;
+    }
+    .icon-instagram {
+        background: rgba(103,74,192,1);
+        background: -moz-linear-gradient(-45deg, rgba(103,74,192,1) 0%, rgba(212,46,129,1) 51%, rgba(249,125,43,1) 100%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(103,74,192,1)), color-stop(51%, rgba(212,46,129,1)), color-stop(100%, rgba(249,125,43,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(103,74,192,1) 0%, rgba(212,46,129,1) 51%, rgba(249,125,43,1) 100%);
+        background: -o-linear-gradient(-45deg, rgba(103,74,192,1) 0%, rgba(212,46,129,1) 51%, rgba(249,125,43,1) 100%);
+        background: -ms-linear-gradient(-45deg, rgba(103,74,192,1) 0%, rgba(212,46,129,1) 51%, rgba(249,125,43,1) 100%);
+        background: linear-gradient(135deg, rgba(103,74,192,1) 0%, rgba(212,46,129,1) 51%, rgba(249,125,43,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#674ac0', endColorstr='#f97d2b', GradientType=1 );
+    }
+}
+/*FIN REDES*/
