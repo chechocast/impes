@@ -20,7 +20,7 @@
     ?>
     <div class="wrap">
       <h1>Ajustes Impes</h1>
-      <form action="option.php" method="post">
+      <form action="options.php" method="post">
         <?php settings_fields( 'impes_opciones_grupo' ); ?>
         <?php do_settings_sections( 'impes_opciones_grupo' ); ?>
 

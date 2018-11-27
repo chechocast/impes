@@ -13,7 +13,7 @@
           <?php 
             $args = array(
               'post_type' => 'proyectos',
-              'post_per_page' => -1,
+              'posts_per_page' => -1,
               'orderby' => 'title',
               'order' => 'ASC'
             );

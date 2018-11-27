@@ -15,6 +15,7 @@ function impes_setup() {
   add_image_size('mini-proyecto', 360, 360, true);
   add_image_size('nosotros', 491, 331, true);
   add_image_size('expocamacol', 663, 395, true);
+  add_image_size('desta-producto', 321, 214, true);
 }
 add_action('after_setup_theme', 'impes_setup');
 
