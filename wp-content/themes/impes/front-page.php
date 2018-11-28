@@ -1,6 +1,15 @@
 <?php get_header(); ?>
-<div class="pg-body">
+<div>
   <?php while (have_posts()): the_post(); ?>
+    <div class="slide_home" id="fullpage">
+      <ul class="section intro" id="section0">
+        <li class="slide">
+          <h2>IMPES - Pionera en tecnolog&iacute;a DUOFLEX<span>&reg;</span> en Latinoam&eacute;rica.</h2>
+          <!--<a href="">Conoce m&aacute;s</a>-->
+        </li>
+        <div id="myVideo"></div>
+      </ul>
+    </div>
     <section class="content_all">
       <div class="intro-img">
       <?php 

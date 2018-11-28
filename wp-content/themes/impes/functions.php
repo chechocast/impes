@@ -9,6 +9,12 @@ require get_template_directory() . '/inc/contactanos.php';
 //opciones para template
 require get_template_directory() . '/inc/opciones.php';
 
+//funciones para home
+require get_template_directory() . '/inc/home.php';
+
+//funciones para productos
+require get_template_directory() . '/inc/producto.php';
+
 function impes_setup() {
   add_theme_support('post-thumbnails');
 
@@ -27,19 +33,24 @@ function impes_styles(){
     wp_register_style( 'icomoon', get_template_directory_uri() . '/css/icomoon.css', array('normalize'), '1.0' );
     wp_register_style( 'style', get_template_directory_uri() . '/style.css', array('normalize'), '1.0' );
     wp_register_style( 'main', get_template_directory_uri() . '/css/styles.css', array('style'), '1.0' );
+    wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper.min.css', array('style'), '1.0' );
 
     //llama estilos
     wp_enqueue_style( 'normalize' );
     wp_enqueue_style( 'icomoon' );
     wp_enqueue_style( 'style' );
     wp_enqueue_style( 'main' );
+    wp_enqueue_style( 'swiper' );
 
     //registrar JS
     wp_register_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true );
+    wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper.min.js', array(), '1.0.0', true );
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'scripts' );
-}
+    wp_enqueue_script( 'swiper' );
+
+    }
 
 add_action('wp_enqueue_scripts', 'impes_styles');
 

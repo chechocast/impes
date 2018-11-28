@@ -518,7 +518,13 @@ section{
     }   
 }
 .ventajas-content{
-    border-top: $bor-gray;
+    background: $gray2;
+
+    .vent-content li{
+        background: $white;
+        border-color: $white;
+        @include border-radius(3px);
+    }
 }
 .testimonials{
     background: $gray2;
