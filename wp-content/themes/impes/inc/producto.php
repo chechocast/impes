@@ -1,6 +1,6 @@
 <?php 
 
-  //agregar un contenido exclusivo para home
+  //agregar un contenido exclusivo para producto
   function tabs_products( $post_object ) {
     if (get_page_template_slug( $post_object->ID )=='page-producto.php') {
       products_add_scripts();

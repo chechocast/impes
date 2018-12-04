@@ -15,6 +15,9 @@ require get_template_directory() . '/inc/home.php';
 //funciones para productos
 require get_template_directory() . '/inc/producto.php';
 
+//funciones para servicios
+require get_template_directory() . '/inc/servicio.php';
+
 function impes_setup() {
   add_theme_support('post-thumbnails');
 
