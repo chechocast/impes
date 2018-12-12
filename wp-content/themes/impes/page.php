@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <div class="pg-body">
+  hola desde page
   <?php while (have_posts()): the_post(); ?>
     <section>
       <article class="content_all">

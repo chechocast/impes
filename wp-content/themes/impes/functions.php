@@ -74,15 +74,15 @@ function impes_proyectos() {
     'menu_name'          => _x( 'Proyectos', 'admin menu', 'Impes' ),
     'name_admin_bar'     => _x( 'Proyectos', 'add new on admin bar', 'Impes' ),
     'add_new'            => _x( 'Add New', 'book', 'Impes' ),
-    'add_new_item'       => __( 'Add New Pizza', 'Impes' ),
+    'add_new_item'       => __( 'Add New Proyectos', 'Impes' ),
     'new_item'           => __( 'New Proyectos', 'Impes' ),
     'edit_item'          => __( 'Edit Proyectos', 'Impes' ),
     'view_item'          => __( 'View Proyectos', 'Impes' ),
     'all_items'          => __( 'All Proyectos', 'Impes' ),
     'search_items'       => __( 'Search Proyectos', 'Impes' ),
     'parent_item_colon'  => __( 'Parent Proyectos:', 'Impes' ),
-    'not_found'          => __( 'No Pizzases found.', 'Impes' ),
-    'not_found_in_trash' => __( 'No Pizzases found in Trash.', 'Impes' )
+    'not_found'          => __( 'No Proyectos found.', 'Impes' ),
+    'not_found_in_trash' => __( 'No Proyectos found in Trash.', 'Impes' )
   );
 
   $args = array(
