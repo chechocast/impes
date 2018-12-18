@@ -85,7 +85,7 @@
           </li>
          <?php endwhile; wp_reset_postdata(); ?>
         </ul>
-        <a class="btn-more" href="proyectos" title="ver todos los proyectos de impermeabilizaci&oacute;n">VER TODOS <span class="icon-circle-right"></span></a>
+        <a class="btn-more" href="nuestros-proyectos" title="ver todos los proyectos de impermeabilizaci&oacute;n">VER TODOS <span class="icon-circle-right"></span></a>
       </article>
     </section>
     <section class="ventajas-content">

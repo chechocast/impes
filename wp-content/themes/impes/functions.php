@@ -46,17 +46,40 @@ function impes_styles(){
     wp_enqueue_style( 'swiper' );
 
     //registrar JS
+    $apikey = esc_html(get_option('impes_gmap_apikey'));
+    wp_register_script( 'maps', 'https://maps.googleapis.com/maps/api/js?key=' . $apikey . '&callback=initMap', array(), '', true );
     wp_register_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true );
     wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper.min.js', array(), '1.0.0', true );
 
+    wp_enqueue_script( 'maps' );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'scripts' );
     wp_enqueue_script( 'swiper' );
 
-    }
+    //Pasar  variables de PHP a Javascript
+    wp_localize_script(
+      'scripts',
+      'opciones',
+      array(
+        'latitud' => get_option('impes_gmap_latitud'),
+        'longitud' => get_option('impes_gmap_longitud'),
+        'zoom' => get_option('impes_gmap_zoom')
+      )
+    );
+}
 
 add_action('wp_enqueue_scripts', 'impes_styles');
 
+//agregar Async  y Defer
+function agregar_async_defer($tag, $handle){
+  if('maps' !== $handle)
+    return $tag;
+  return str_replace(' src', ' async="async" defer="defer" src', $tag);
+}
+add_filter('script_loader_tag', 'agregar_async_defer', 10, 2 );
+
+
+//Creacion de menus
 function impes_menus(){
   register_nav_menus(array(
     'header-menu' => __('Header Menu', 'Impes'),
