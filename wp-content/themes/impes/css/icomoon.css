@@ -24,87 +24,93 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home:before {
+.icon-box-remove:before {
   content: "\e900";
 }
-.icon-office:before {
-  content: "\e903";
-}
-.icon-pencil:before {
-  content: "\e905";
-}
-.icon-paint-format:before {
-  content: "\e90c";
-}
-.icon-images:before {
-  content: "\e90e";
-}
-.icon-phone:before {
-  content: "\e942";
-}
-.icon-printer:before {
-  content: "\e954";
-}
-.icon-mobile2:before {
-  content: "\e959";
-}
-.icon-box-remove:before {
-  content: "\e95f";
-}
-.icon-search:before {
-  content: "\e986";
-}
-.icon-cog:before {
-  content: "\e994";
-}
-.icon-truck:before {
-  content: "\e9b0";
-}
-.icon-menu:before {
-  content: "\e9bd";
-}
-.icon-warning:before {
-  content: "\ea07";
-}
-.icon-plus:before {
-  content: "\ea0a";
-}
-.icon-minus:before {
-  content: "\ea0b";
-}
-.icon-cross:before {
-  content: "\ea0f";
-}
 .icon-checkmark:before {
-  content: "\ea10";
-}
-.icon-circle-up:before {
-  content: "\ea41";
-}
-.icon-circle-right:before {
-  content: "\ea42";
+  content: "\e901";
 }
 .icon-circle-down:before {
-  content: "\ea43";
+  content: "\e902";
 }
 .icon-circle-left:before {
-  content: "\ea44";
+  content: "\e903";
 }
-.icon-mail2:before {
-  content: "\ea84";
+.icon-circle-right:before {
+  content: "\e904";
 }
-.icon-google-plus:before {
-  content: "\ea8b";
+.icon-circle-up:before {
+  content: "\e905";
+}
+.icon-cog:before {
+  content: "\e906";
+}
+.icon-cross:before {
+  content: "\e907";
 }
 .icon-facebook:before {
-  content: "\ea90";
+  content: "\e908";
 }
-.icon-whatsapp:before {
-  content: "\ea93";
+.icon-google-plus:before {
+  content: "\e909";
+}
+.icon-home:before {
+  content: "\e90a";
+}
+.icon-images:before {
+  content: "\e90b";
+}
+.icon-mail2:before {
+  content: "\e90c";
+}
+.icon-menu:before {
+  content: "\e90d";
+}
+.icon-minus:before {
+  content: "\e90e";
+}
+.icon-mobile2:before {
+  content: "\e90f";
+}
+.icon-office:before {
+  content: "\e910";
+}
+.icon-paint-format:before {
+  content: "\e911";
+}
+.icon-pencil:before {
+  content: "\e912";
+}
+.icon-phone:before {
+  content: "\e913";
+}
+.icon-plus:before {
+  content: "\e914";
+}
+.icon-printer:before {
+  content: "\e915";
+}
+.icon-search:before {
+  content: "\e916";
+}
+.icon-truck:before {
+  content: "\e917";
 }
 .icon-twitter:before {
-  content: "\ea96";
+  content: "\e918";
+}
+.icon-warning:before {
+  content: "\e919";
+}
+.icon-whatsapp:before {
+  content: "\e91a";
 }
 .icon-youtube:before {
-  content: "\ea9d";
+  content: "\e91b";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
 }

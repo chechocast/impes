@@ -5,7 +5,7 @@
       <article class="content_all">
         <h1 class="tit-section"><?php the_title(); ?></h1>
         <div class="inter-txt">
-          <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+          <!--<img src="<?php /*echo get_the_post_thumbnail_url();*/ ?>" alt="">-->
           <main>
             <?php the_content(); ?>
           </main>

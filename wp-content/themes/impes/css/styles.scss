@@ -246,6 +246,20 @@ header{
             position: absolute;
         }
     }
+    .redes{
+        @include xl{
+            position: fixed;
+            top: 120px;
+            background: $white;
+            right: 0;
+            @include border-radius(3px 0 0 3px);
+            @include box-shadow(0 0 6px rgba(68, 68, 68, 0.3));
+
+            br{
+                display: none;
+            }
+        }
+    }
 }
 /*FIN HEADER*/
 
@@ -1073,6 +1087,32 @@ footer{
         }
     }
 
+    .redes{
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        width: calc(100% - 220px);
+        float: right;
+
+        @include s{
+            float: none;
+            width: 100%;
+        }
+
+        .social{
+            float: none;
+            
+            ul li{
+                display: inline-block;
+                margin: 0;
+            }
+        }
+        span{
+            float: none;
+        }
+    }
+
     a{
         color: $white;
     }
@@ -1255,7 +1295,7 @@ footer{
 /*FIN NOSOTROS*/
 
 /*CONTACTO*/
-form{
+.contacto{
     margin: 20px 0;
 
     input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea{
@@ -1480,19 +1520,6 @@ form{
     position: absolute;
     top: 30px;
     right: 10px;
-
-    @include xl{
-        position: fixed;
-        top: 120px;
-        background: $white;
-        right: 0;
-        @include border-radius(3px 0 0 3px);
-        @include box-shadow(0 0 6px rgba(68, 68, 68, 0.3));
-
-        br{
-            display: none;
-        }
-    }
     
     .social{
         float: right;
@@ -1534,19 +1561,19 @@ form{
                     }
 
                     &[href*="facebook.com"]::before{
-                        content: "\ea90";
-                        background: #3DA7FF;
+                        content: "\e908";
+                        background: #15578D;
                     }
                     &[href*="twitter.com"]::before{
-                        content: "\ea96";
+                        content: "\e918";
                         background: #3DA7FF;
                     }
                     &[href*="youtube.com"]::before{
-                        content: "\ea9d";
+                        content: "\e91b";
                         background: #E33333;
                     }
                     &[href*="linkedin.com"]::before{
-                        content: "\ea8b";
+                        content: "\eaca";
                         background: #0073b1;
                     }
 
@@ -1581,6 +1608,9 @@ form{
 
     .icon-youtube {
         background: #E33333;
+    }
+    .icon-linkedin {
+        background: #0073b1;
     }
     .icon-instagram {
         background: rgba(103,74,192,1);

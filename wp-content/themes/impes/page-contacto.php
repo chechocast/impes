@@ -9,7 +9,7 @@
         <h1 class="tit-section"><?php the_title(); ?></h1>
         <div class="inter-txt">
           <main>
-            <form method="post">
+            <form class="contacto" method="post">
               <div>
                 <input type="text" placeholder="Nombre y Apellidos" name="nombre" required />
                 <span class="error"></span>
