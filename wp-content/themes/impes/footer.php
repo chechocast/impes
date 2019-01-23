@@ -1,11 +1,9 @@
   <footer>
     <article class="content_all">
       <ul>
-        <li><?php echo esc_html( get_option('lapizzeria_direccion')); ?></li>
-        <li><?php echo esc_html( get_option('lapizzeria_telefono')); ?></li>
-        <li><?php echo esc_html( get_option('impes_direccion') ); ?></li>
-        <li><?php echo esc_html( get_option('impes_ciudad') ); ?></li>
-        <li><?php echo esc_html( get_option('impes_telefono') ); ?></li>
+        <li><i class="icon-office1"></i> <?php echo esc_html( get_option('impes_direccion') ); ?></li>
+        <li><i class="icon-location"></i> <?php echo esc_html( get_option('impes_ciudad') ); ?></li>
+        <li><i class="icon-phone1"></i> <?php echo esc_html( get_option('impes_telefono') ); ?></li>
         <li><a href="" target="_blank">Políticas y privacidad</a></li>
       </ul>
       <img src="<?php echo get_template_directory_uri(); ?>/images/logo_footer.png">

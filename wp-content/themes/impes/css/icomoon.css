@@ -108,6 +108,15 @@
 .icon-youtube:before {
   content: "\e91b";
 }
+.icon-office1:before {
+  content: "\e91c";
+}
+.icon-phone1:before {
+  content: "\e942";
+}
+.icon-location:before {
+  content: "\e947";
+}
 .icon-instagram:before {
   content: "\ea92";
 }
