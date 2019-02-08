@@ -21,7 +21,7 @@ require get_template_directory() . '/inc/servicio.php';
 function impes_setup() {
   add_theme_support('post-thumbnails');
 
-  add_image_size('mini-proyecto', 360, 360, true);
+  add_image_size('mini-proyecto', 360, 203, true);
   add_image_size('nosotros', 491, 331, true);
   add_image_size('expocamacol', 663, 395, true);
   add_image_size('desta-producto', 321, 214, true);

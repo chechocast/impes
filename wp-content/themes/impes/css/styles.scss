@@ -534,12 +534,31 @@ section{
 .ventajas-content{
     background: $gray2;
 
-    .vent-content li{
-        background: $white;
-        border-color: $white;
-        @include border-radius(3px);
+    .vent-content{
+        ul{
+            list-style: none;
+            padding: 0;
+
+            li{
+                background: $white;
+                border-color: $white;
+                @include border-radius(3px);
+            }
+        }    
     }
 }
+.purple-content{
+    background: $purple;
+
+    .proyects-content li{
+        background: $white;
+    }
+
+    .tit-section, a{
+        color: $white;
+    }
+}
+
 .testimonials{
     background: $gray2;
 
@@ -590,45 +609,34 @@ section{
 
 /*PROYECTOS*/
 .proyects-content{
-    background: $purple;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     list-style: none;
-    @include sm{
-        background: transparent;
-        grid-template-columns: 1fr;
-    }
 
     li{
-        color: $white;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        @include media-max(768px){
-            &:nth-child(4n-1) .proyect-prev, &:nth-child(4n+0) .proyect-prev{
-            order: 2;
-            }
-            &:nth-child(4n-1) .text-box-prev, &:nth-child(4n+0) .text-box-prev{
-                order: 1;
-            }
-        }
+        width: calc(33.3% - 20px);
+        float: left;
+        margin: 0 30px 30px 0;
+        background: $gray2;
 
         @include sm{
-            background: $purple;
-            grid-template-columns: 2fr 5fr;
-            margin: 0 0 20px;
-            @include border-radius(2px);
-        }
-        @include s{
-            grid-template-columns: 4fr 5fr;
+            width: calc(50% - 15px);
+
+            &:nth-child(3n){
+                margin-right: 30px !important;
+            }
+
+            &:nth-child(2n){
+                margin-right: 0 !important;
+            }
         }
         @include xxs{
-            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            margin: 0 0 20px;
         }
-        @include i6{
-            grid-template-columns: unset;
+
+        &:nth-child(3n){
+            margin-right: 0;
         }
     }
     .proyect-prev{
@@ -645,7 +653,7 @@ section{
         }
     }
     .text-box{
-        padding: 20px;
+        padding: 15px;
         box-sizing: border-box;
         @include md{
             padding: 15px;
@@ -679,6 +687,7 @@ section{
         }
         h3{
             font-weight: 700;
+            color: $darkblue;
             font-size: 16px;
             text-transform: uppercase;
             line-height: 120%;
@@ -691,11 +700,15 @@ section{
             @include xxs{
                 font-size: 14px;
             }
+
+            &.tit-blog{
+                text-transform: inherit;
+            }
         }
         a{
-            margin: 30px 0 0;
+            margin: 10px 0 0;
             display: block;
-            color: $white;
+            color: $purple;
             font-weight: 600;
             @include md{
                 margin: 10px 0 0;
@@ -1098,6 +1111,7 @@ footer{
         text-align: center;
         width: calc(100% - 220px);
         float: right;
+        margin-bottom: 10px;
 
         @include s{
             float: none;

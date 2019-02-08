@@ -33,6 +33,7 @@
             </div>
           </li>
          <?php endwhile; wp_reset_postdata(); ?>
+         <br/>
         </ul>
       </article>
     </section>
