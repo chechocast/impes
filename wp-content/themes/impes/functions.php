@@ -128,4 +128,43 @@ function impes_proyectos() {
   register_post_type( 'proyectos', $args );
 }
 
+//aqui clientes
+add_action( 'init', 'impes_clientes' );
+function impes_clientes() {
+  $labels = array(
+    'name'               => _x( 'Clientes', 'Impes' ),
+    'singular_name'      => _x( 'Clientes', 'post type singular name', 'Impes' ),
+    'menu_name'          => _x( 'Clientes', 'admin menu', 'Impes' ),
+    'name_admin_bar'     => _x( 'Clientes', 'add new on admin bar', 'Impes' ),
+    'add_new'            => _x( 'Add New', 'book', 'Impes' ),
+    'add_new_item'       => __( 'Add New Clientes', 'Impes' ),
+    'new_item'           => __( 'New Clientes', 'Impes' ),
+    'edit_item'          => __( 'Edit Clientes', 'Impes' ),
+    'view_item'          => __( 'View Clientes', 'Impes' ),
+    'all_items'          => __( 'All Clientes', 'Impes' ),
+    'search_items'       => __( 'Search Clientes', 'Impes' ),
+    'parent_item_colon'  => __( 'Parent Clientes:', 'Impes' ),
+    'not_found'          => __( 'No Clientes found.', 'Impes' ),
+    'not_found_in_trash' => __( 'No Clientes found in Trash.', 'Impes' )
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'description'        => __( 'Description.', 'Impes' ),
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'clientes' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => 6,
+    'supports'           => array( 'title', 'editor', 'thumbnail' ),
+  );
+
+  register_post_type( 'clientes', $args );
+}
+
  ?>

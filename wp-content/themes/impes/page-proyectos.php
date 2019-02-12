@@ -35,6 +35,9 @@
          <?php endwhile; wp_reset_postdata(); ?>
          <br/>
         </ul>
+        <div class="paginator">
+          <?php echo paginate_links(); ?>
+        </div>
       </article>
     </section>
   <?php endwhile; ?>  

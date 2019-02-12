@@ -722,6 +722,18 @@ section{
 }
 /*FIN PROYECTOS*/
 
+/*ENTRADAS*/
+.img-post{
+    margin: 20px auto;
+
+    img{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+/*FIN ENTRADAS*/
+
 /*VENTAJAS*/
 .vent-content{
     margin: 10px 0 0;
@@ -832,6 +844,10 @@ section{
 
     @include i5{
         font-size: 13px;
+    }
+
+    .video{
+        margin: 20px auto;
     }
 }
 .equipment{

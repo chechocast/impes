@@ -46,6 +46,23 @@
         <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
       </article>
+      <div class="prueba">
+        <?php 
+            $args = array(
+              'post_type' => 'clientes',
+              'posts_per_page' => -1,
+              'orderby' => 'title',
+              'order' => 'ASC'
+            );
+            $clientes = new WP_Query($args);
+            while($clientes->have_posts()): $clientes->the_post();
+
+           ?>
+          <div>
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+          </div>
+         <?php endwhile; wp_reset_postdata(); ?>
+      </div>
     </section>
   <?php endwhile; ?>  
 </div>
