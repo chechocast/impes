@@ -33,19 +33,4 @@
           </div>
         </nav>
       </div><!--contenedor -->
-      <div class="redes">
-        <span>Siguenos en:</span>
-        <?php
-          $args = array(
-            'theme_location' => 'social-menu',
-            'container' => 'nav',
-            'container_class' => 'social',
-            'container_id' => 'social',
-            'link_before' => '<span class="sr-text">',
-            'link_after' => '</span>',
-          );
-          wp_nav_menu($args);
-
-         ?>
-      </div><!--redes-->
     </header>

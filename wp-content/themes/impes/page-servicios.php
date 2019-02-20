@@ -16,7 +16,7 @@
     </div>
     <section class="content_all">
       <article class="swiper-container">
-        <h2 class="tit-section">ALGUNOS DE NUESTROS CLIENTES</h2>
+        <!--<h2 class="tit-section">ALGUNOS DE NUESTROS CLIENTES</h2>-->
         <ul class="clients swiper-wrapper">
           <?php 
             $args = array(
@@ -28,7 +28,7 @@
             $clientes = new WP_Query($args);
             $icliente = 0;
             while($clientes->have_posts()): $clientes->the_post();
-                if($icliente % 3 == 0){
+                if($icliente % 4 == 0){
                   ?>
                     <div class="swiper-slide" data-swiper-autoplay="6000">
                   <?php
@@ -40,7 +40,7 @@
               </li>
               <?php
               $icliente++;
-              if($icliente != 0 && $icliente % 3 == 0){
+              if($icliente != 0 && $icliente % 4 == 0){
                 ?>
                 </div>
                 <?php

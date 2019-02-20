@@ -167,4 +167,43 @@ function impes_clientes() {
   register_post_type( 'clientes', $args );
 }
 
+//aqui aplicadores autorizados
+add_action( 'init', 'impes_aplicadores' );
+function impes_aplicadores() {
+  $labels = array(
+    'name'               => _x( 'Aplicadores', 'Impes' ),
+    'singular_name'      => _x( 'Aplicadores', 'post type singular name', 'Impes' ),
+    'menu_name'          => _x( 'Aplicadores', 'admin menu', 'Impes' ),
+    'name_admin_bar'     => _x( 'Aplicadores', 'add new on admin bar', 'Impes' ),
+    'add_new'            => _x( 'Add New', 'book', 'Impes' ),
+    'add_new_item'       => __( 'Add New Aplicadores', 'Impes' ),
+    'new_item'           => __( 'New Aplicadores', 'Impes' ),
+    'edit_item'          => __( 'Edit Aplicadores', 'Impes' ),
+    'view_item'          => __( 'View Aplicadores', 'Impes' ),
+    'all_items'          => __( 'All Aplicadores', 'Impes' ),
+    'search_items'       => __( 'Search Aplicadores', 'Impes' ),
+    'parent_item_colon'  => __( 'Parent Aplicadores:', 'Impes' ),
+    'not_found'          => __( 'No Aplicadores found.', 'Impes' ),
+    'not_found_in_trash' => __( 'No Aplicadores found in Trash.', 'Impes' )
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'description'        => __( 'Description.', 'Impes' ),
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'aplicadores' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => 6,
+    'supports'           => array( 'title', 'editor', 'thumbnail' ),
+  );
+
+  register_post_type( 'aplicadores', $args );
+}
+
  ?>

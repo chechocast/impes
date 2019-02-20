@@ -549,6 +549,7 @@ section{
 }
 .purple-content{
     background: $purple;
+    overflow: hidden;
 
     .proyects-content li{
         background: $white;
@@ -691,18 +692,38 @@ section{
             font-size: 16px;
             text-transform: uppercase;
             line-height: 120%;
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
             @include md{
                 font-size: 14px;
             }
             @include sm{
                 font-size: 16px;
             }
+            @include xs{
+                height: 57px;
+            }
             @include xxs{
                 font-size: 14px;
+                height: auto;
             }
 
             &.tit-blog{
                 text-transform: inherit;
+            }
+        }
+        p{
+            height: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include xs{
+                height: 100px;
+            }
+            @include xxs{
+                height: auto;
             }
         }
         a{
@@ -962,7 +983,7 @@ section{
 
     li{
         float: left;
-        width: 33.3%;
+        width: 25%;
         margin: 30px 0 0;
 
         img{
@@ -989,6 +1010,37 @@ section{
         display: block;
         width: 100%;
         height: auto;
+    }
+}
+.box-aplicador{
+    background: $gray2;
+    padding: 10px;
+    box-sizing: border-box;
+    @include border-radius(3px);
+
+    img{
+        display: block;
+        margin: 0 10px 0 0;
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        background: $white;
+        float: left;
+    }
+    .txt-aplicador{
+        display: block;
+        float: left;
+        
+        h3{
+            color: $black;
+            font-size: 12px;
+        }
+        p{
+            font-size: 18px;
+            color: $darkblue;
+            padding: 0;
+            font-weight: 700;
+        }
     }
 }
 /*FIN PRODUCTO*/
@@ -1658,3 +1710,5 @@ footer{
     }
 }
 /*FIN REDES*/
+@import 'animate';
+

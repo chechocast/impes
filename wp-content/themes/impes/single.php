@@ -27,6 +27,24 @@
           <main>
             <?php the_content(); ?>
           </main>
+          <?php 
+              $id_imagen = get_field('imagen_aplicador');
+              $aplicador_proyecto = get_field('aplicador_proyecto');
+              $imagen = wp_get_attachment_image_src($id_imagen, 'aplicador');
+              if($id_imagen != null && $id_imagen != '' && $aplicador_proyecto != null && $aplicador_proyecto != ''){
+                ?>
+                <div class="box-aplicador">
+                  <img src="<?php echo $imagen[0]; ?>" alt="">
+                  <div class="txt-aplicador">
+                    <h3>Aplicador autorizado:</h3>
+                    <p><?php the_field('aplicador_proyecto'); ?></p>
+                  </div>
+                  <br/>
+                </div>
+                <?php
+              }
+            ?>
+          
         </div>
       </article>
     </section>

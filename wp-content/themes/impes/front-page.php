@@ -78,7 +78,7 @@
               $inews++;
 
            ?>
-          <li class="linews" for="page<?php echo $ipage; ?>" style="display:none">
+          <li class="linews animated" for="page<?php echo $ipage; ?>" style="display:none">
             <div class="proyect-prev">
               <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('mini-proyecto');  ?></a>
             </div>
@@ -146,33 +146,44 @@
         <a href="ventajas" class="btn-more" title="ver todas las ventajas de la impermeabilizaci&oacute;n">VER TODAS <span class="icon-circle-right"></span></a>
       </article>
     </section>
-    <section>
-      <article class="content_all">
+    <section class="content_all">
+      <article class="swiper-container">
         <h2 class="tit-section">APLICADORES AUTORIZADOS</h2>
-        <ul class="clients ">
-          <li>
-            <?php 
-              $id_imagen = get_field('aplicador_1');
-              $imagen = wp_get_attachment_image_src($id_imagen, 'expocamacol');
+        <ul class="clients swiper-wrapper">
+          <?php 
+            $args = array(
+              'post_type' => 'aplicadores',
+              'posts_per_page' => -1,
+              'orderby' => 'title',
+              'order' => 'DESC'
+            );
+            $aplicadores = new WP_Query($args);
+            $iaplicadores = 0;
+            while($aplicadores->have_posts()): $aplicadores->the_post();
+                if($iaplicadores % 4 == 0){
+                  ?>
+                    <div class="swiper-slide" data-swiper-autoplay="6000">
+                  <?php
+                }
+           ?>
+            
+              <li class="<?php echo $iaplicadores ?>">
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+              </li>
+              <?php
+              $iaplicadores++;
+              if($iaplicadores != 0 && $iaplicadores % 4 == 0){
+                ?>
+                </div>
+                <?php
+              }
             ?>
-            <img src="<?php echo $imagen[0]; ?>" alt="">
-          </li>
-          <li>
-            <?php 
-              $id_imagen = get_field('aplicador_2');
-              $imagen = wp_get_attachment_image_src($id_imagen, 'expocamacol');
-            ?>
-            <img src="<?php echo $imagen[0]; ?>" alt="">
-          </li>
-          <li>
-            <?php 
-              $id_imagen = get_field('aplicador_3');
-              $imagen = wp_get_attachment_image_src($id_imagen, 'expocamacol');
-            ?>
-            <img src="<?php echo $imagen[0]; ?>" alt="">
-          </li>
-          <br/>
+          <?php 
+              
+              endwhile; wp_reset_postdata(); ?>
         </ul>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
       </article>
     </section>
 
@@ -190,8 +201,18 @@
     function nextPage(){
       var selector = 'li[for="page'+i+'"]';
       if($(selector).length){
-        $('.linews').hide();
-        $(selector).show();
+        $('.linews').removeClass('fadeInDown');
+        $('.linews').addClass('fadeOutDown');
+        
+        
+        setTimeout(function(){
+          $('.linews').hide();
+          $('.linews').removeClass('fadeOutDown');
+          $(selector).show();
+          $(selector).addClass('fadeInDown');
+
+        }, 400);
+
         i++;
       }
       else{
